@@ -1,9 +1,9 @@
 // Schéma de données utilisateur
 
 class User {
-    constructor (email, password) {
-        this.email = email;
-        this.password = password;
+    constructor (obj) {
+        this.identifiant = obj.identifiant;
+        this.password = obj.password;
     }
 }
 

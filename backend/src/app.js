@@ -7,6 +7,9 @@ const cors = require("cors");
 // Importer connection à la base de donnée
 const mySql = require("./db/db.mysql");
 
+// Importer les routes
+const userRoutes = require("./routes/userRouter");
+
 // Création application express
 const app = express();
 
@@ -19,13 +22,8 @@ app.use(morgan("dev"));
 // Configurer les CORS (front et back sur des serveurs différents)
 app.use(cors());
 
-
-app.get('/', (req,res) => {
-    mySql.query("SELECT * FROM users", (err, rows) => {
-        if(err) throw err;
-        res.json(rows);
-    })
-})
+// Configurer les routes
+app.use("/api/auth", userRoutes);
 
 // Exporter l'application
 module.exports = app;

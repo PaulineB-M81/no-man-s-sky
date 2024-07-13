@@ -1,7 +1,7 @@
 const mySql = require("mysql");
 
 // Paramètres de connection à ma base de donnée
-const connection = mySql.createConnection({
+const mySqlConnection = mySql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
@@ -9,12 +9,12 @@ const connection = mySql.createConnection({
 })
 
 // Connection à la base de donnée
-connection.connect((err)=> {
+mySqlConnection.connect((err)=> {
     if(err) {
         console.log(`error connecting: ${err.stack}`)
     } else {
-        console.log(`connected as id ${connection.threadId}`);
+        console.log(`connected as id ${mySqlConnection.threadId}`);
     }
 })
 
-module.exports = connection;
+module.exports = mySqlConnection;
