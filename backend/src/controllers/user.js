@@ -1,0 +1,1 @@
+// Logique métier qui communique avec la base de donnée

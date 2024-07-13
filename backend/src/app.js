@@ -1,9 +1,10 @@
+// Reception des requetes du server => dispatch les requetes selon leur routes
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
 
-// import connection à la base de donnée
+// Importer connection à la base de donnée
 const mySql = require("./db/db.mysql");
 
 // Création application express
@@ -16,6 +17,9 @@ app.get('/', (req,res) => {
     })
 })
 
-app.listen(port, () => {
-    console.log('serveur en ligne ! ')
-}) 
+// app.listen(port, () => {
+//     console.log('serveur en ligne ! ')
+// }) 
+
+
+module.exports = app;
