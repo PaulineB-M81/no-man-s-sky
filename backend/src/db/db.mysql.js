@@ -1,6 +1,5 @@
 const mySql = require("mysql");
 
-console.log(process.env.DB_HOST)
 // Paramètres de connection à ma base de donnée
 const connection = mySql.createConnection({
     host: process.env.DB_HOST,
