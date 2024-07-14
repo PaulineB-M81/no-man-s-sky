@@ -8,5 +8,7 @@ const passwordMiddleware = require("../middleware/passwordMiddleware");
 // POST method register endpoint
 router.post("/register", cors(), passwordMiddleware.passwordChecked, userController.register);
 
+// POST method login endpoint
+router.post("/login", userController.login);
 
 module.exports = router;

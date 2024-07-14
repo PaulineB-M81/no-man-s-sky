@@ -19,6 +19,8 @@ exports.passwordChecked = (req, res, next) => {
     if (!checkValidPassword(req.body.password).length) {
         next()
     } else {
-        return res.status(400).json({error: "invalid password", testFailed: checkValidPassword(req.body.password)});
+        return res.status(400).json(
+            {error: "invalid password", testFailed: checkValidPassword(req.body.password)}
+        );
     }
 }
