@@ -9,7 +9,7 @@ const User = require("../models/Users");
 exports.register = (req, res) => {
 
     // Hasher le password
-    bcrypt.hash(req.body.password, 10)
+    bcrypt.hash(req.body.password, 5)
     .then((hash) => {
         const user = new User ({
             identifiant: req.body.identifiant,
