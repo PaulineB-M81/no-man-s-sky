@@ -5,7 +5,9 @@ const userMetadataController = require("../controllers/userMetadataController");
 // const passwordMiddleware = require("../middleware/passwordMiddleware");
 
 // POST method création des metadata endpoint
-router.post("/create-profil", userMetadataController.createProfil);
+router.post("/profil", userMetadataController.createProfil);
+router.get("/profil/:id", userMetadataController.getProfil);
+// TODO ajouter route put delete
 
 // create character list
 // create todo list
