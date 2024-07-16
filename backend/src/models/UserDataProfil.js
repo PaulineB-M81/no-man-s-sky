@@ -4,7 +4,7 @@ class UserDataProfil {
     constructor (obj) {
         this.userId_metadata = obj.userId;
         this.pseudo_profil = obj.pseudo;
-        this.img_profil = obj.imgProfil;
+        this.img_profil = obj.img;
     }
 }
 

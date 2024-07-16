@@ -2,11 +2,11 @@
 const express = require("express");
 const router = express.Router();
 const userMetadataController = require("../controllers/userMetadataController");
-// const passwordMiddleware = require("../middleware/passwordMiddleware");
+const authMiddleware = require("../middleware/authMiddleware");
 
 // POST method création des metadata endpoint
-router.post("/profil", userMetadataController.createProfil);
-router.get("/profil/:id", userMetadataController.getProfil);
+router.post("/profil", authMiddleware, userMetadataController.createProfil);
+router.get("/profil/:id", authMiddleware, userMetadataController.getProfil);
 // TODO ajouter route put delete
 
 // create character list

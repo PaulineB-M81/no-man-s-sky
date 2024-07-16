@@ -4,9 +4,11 @@ const mySqlConnection = require("../db/db.mysql");
 const UserDataProfil = require("../models/UserDataProfil");
 
 exports.createProfil = (req, res) => {
-     const userProfilObj = req.body.userProfil;
+    console.log(req.body.userId)
      const userProfil = new UserDataProfil({
-          ...userProfilObj
+            userId: req.body.userId,
+            pseudo: req.body.userProfil.pseudo,
+            img: req.body.userProfil.imgProfil
      })
     
      const querySql = `INSERT INTO user_data_profil SET ?`;
