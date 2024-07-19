@@ -5,6 +5,8 @@ const jwt = require("jsonwebtoken");
 const mySqlConnection = require("../db/db.mysql");
 const User = require("../models/Users");
 
+// Remplacer les then par fonction async try await catch
+
 // Enregistrer un nouvel utilisateur dans la bdd
 exports.register = (req, res) => {
 

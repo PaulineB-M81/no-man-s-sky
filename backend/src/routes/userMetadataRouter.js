@@ -6,7 +6,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 // POST method création des metadata endpoint
 router.post("/profil", authMiddleware, userMetadataController.createProfil);
-router.get("/profil/:id", authMiddleware, userMetadataController.getProfil);
+router.get("/profil/:id", userMetadataController.getProfil);
 // TODO ajouter route put delete
 
 // create character list
