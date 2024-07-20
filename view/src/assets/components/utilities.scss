@@ -17,6 +17,10 @@
     height: 100%;
 }
 
+.d-none {
+    display: none;
+}
+
 .stretched-link::after {
     position: absolute;
     top: 0;
