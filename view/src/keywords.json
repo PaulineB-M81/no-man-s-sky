@@ -1,8 +1,14 @@
 {
     "menu": {
-        "login": "Connection",
+        "login": "Connexion",
         "search": "Rechercher",
         "share": "Partager",
         "explore": "Explorer"
+    },
+    "form": {
+        "identifiant": "Identifiant",
+        "password": "Password",
+        "connect": "Connexion",
+        "regiser": "Inscription"
     }
 }

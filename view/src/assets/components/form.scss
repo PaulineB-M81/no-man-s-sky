@@ -1,0 +1,33 @@
+.form {
+    background-color: $surface-color-fill;
+    border-radius: $border-radius;
+    padding: 2rem;
+
+    &-group {
+        margin-bottom: 2rem;
+    }
+
+    &-label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+
+    &-control {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        color: $text-color;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        background-color: transparent;
+        border-radius: $border-radius;
+        border: 1px solid $border-color;
+
+        &:focus {
+            border-color: $btn-bg-primary-hover;
+            box-shadow: $box-shadow $box-shadow-primary;
+            outline: none;
+        }
+    }
+}

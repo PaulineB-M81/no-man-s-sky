@@ -2,9 +2,11 @@
 // --------------------------------------------------
 :root {
 
-  --primary-color: #FF9800;
-  --primary-color-low: #F57C00;
-  --primary-color-hight: #FFB74D;
+  --primary-color: #673ab7;
+  --primary-color-low: #512DA8;
+  --primary-color-hight: #7E57C2;
+  --primary-color-highter: #504661;
+  --primary-color-opacity: rgba(103, 58, 183, .25);
 
   --secondary-color: #E6E3E1;
   --secondary-color-low: #CCC8C4;
@@ -12,7 +14,7 @@
 
   --tertiary-color: #795548;
   --tertiary-color-low: #5D4037;
-  --tertiary-color-hight: #A1887F;
+  --tertiary-color-hight: #8D6E63;
 
   --surface-color: #1C1B1D;
   --surface-color-low: #141314;
@@ -40,14 +42,37 @@ $heading-color:                 var(--secondary-color-hight);
 $text-font-family-base:         "Noto Sans", sans-serif;
 $heading-font-family-base:      "Noto Sans Bold", sans-serif;
 
+$text-size-base:                1rem;
+$text-size-md:                  $text-size-base * 0.875;
+$text-size-lg:                  $text-size-base * 1.125;   
+
 
 // BORDER
 // --------------------------------------------------
 $border-radius:                 0.5rem;
 $border-radius-sm:              0.2rem;
 
+$border-color:                  var(--primary-color-highter);
+
 
 // LINK
 // --------------------------------------------------
 $link-color:                    var(--primary-color);
 $link-color-hover:              var(--primary-color-hight);
+
+
+// BUTTON
+// --------------------------------------------------
+$btn-bg-primary:                var(--primary-color);
+$btn-bg-primary-hover:          var(--primary-color-hight);
+$btn-bg-primary-active:         var(--primary-color-low);
+
+$btn-bg-secondary:              var(--tertiary-color);
+$btn-bg-secondary-hover:        var(--tertiary-color-hight);
+$btn-bg-secondary-active:       var(--tertiary-color-low);
+
+
+// BOX-SHADOW
+// --------------------------------------------------
+$box-shadow:                    0 0 0 .25rem;
+$box-shadow-primary:            var(--primary-color-opacity);
