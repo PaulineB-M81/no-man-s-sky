@@ -1,0 +1,53 @@
+// COLOR PALETTE
+// --------------------------------------------------
+:root {
+
+  --primary-color: #FF9800;
+  --primary-color-low: #F57C00;
+  --primary-color-hight: #FFB74D;
+
+  --secondary-color: #E6E3E1;
+  --secondary-color-low: #CCC8C4;
+  --secondary-color-hight: #f2efed;
+
+  --tertiary-color: #795548;
+  --tertiary-color-low: #5D4037;
+  --tertiary-color-hight: #A1887F;
+
+  --surface-color: #1C1B1D;
+  --surface-color-low: #141314;
+  --surface-color-hight: #2B292B;
+
+  --error-color: #C62828;
+  --success-color: #2E7D32;
+
+  --white-color: #FFF;
+  --dark-color: #000;
+  }
+
+// SURFACE
+// --------------------------------------------------
+$surface-color-base:            var(--surface-color-low);
+$surface-color-fill:            var(--surface-color);
+$surface-color-fill-hover:      var(--surface-color-hight);
+
+
+// TYPOGRAPHY
+// --------------------------------------------------
+$text-color:                    var(--secondary-color);
+$heading-color:                 var(--secondary-color-hight);
+
+$text-font-family-base:         "Noto Sans", sans-serif;
+$heading-font-family-base:      "Noto Sans Bold", sans-serif;
+
+
+// BORDER
+// --------------------------------------------------
+$border-radius:                 0.5rem;
+$border-radius-sm:              0.2rem;
+
+
+// LINK
+// --------------------------------------------------
+$link-color:                    var(--primary-color);
+$link-color-hover:              var(--primary-color-hight);

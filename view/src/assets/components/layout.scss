@@ -1,0 +1,14 @@
+.app{
+    &-layout {
+        display: flex;
+        height: 100vh;
+    }
+    &-header {
+        flex-basis: 10rem;
+        flex-shrink: 0;
+        background-color: $surface-color-fill;
+    }
+    &-main {
+        flex-grow: 1;
+    }
+}

@@ -1,0 +1,30 @@
+.header {
+    &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    &-item {
+        position: relative;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+        border-radius: $border-radius-sm;
+        text-align: center;
+        &:hover {
+            background-color: $surface-color-fill-hover;
+            .icon-header {
+                stroke-width: 2.5;
+               }
+        }
+    }
+
+    &-link {
+        color: $text-color;
+        display: block;
+        &:hover {
+            font-weight: 600;
+           
+        }
+    }
+}
