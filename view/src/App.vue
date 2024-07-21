@@ -2,8 +2,8 @@
 import { RouterLink, RouterView } from 'vue-router'
 import keywords from './keywords.json'
 import HeaderContent from './components/Header.vue';
-// import {useblogPost} from "./stores/user-profil";
-// const myStore = useblogPost();
+// import {useUserManagement} from "./stores/user-profil";
+// const myStore = useUserManagement();
 // console.log(myStore.getBlogPost())
 
 </script>
