@@ -1,0 +1,36 @@
+.nav-tab {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 1.5rem;
+        background-color: transparent;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 3px solid $btn-bg-primary;
+        text-transform: uppercase;
+        cursor: pointer;
+        letter-spacing: 1px;
+        transition: all .2s cubic-bezier(.2,0,0,1);
+        font-weight: 600;
+
+        &:hover {
+            box-shadow: 0 -3px 0px $btn-bg-primary inset;
+            transition: all .3s cubic-bezier(.2,0,0,1);
+        }
+
+        &.active {
+            background-color: $btn-bg-primary;
+            border-radius: $border-radius-sm;
+        }
+    }
+}
+
+.tab-content {
+    padding-top: 2rem;
+}
