@@ -4,24 +4,23 @@ import { useUserAuth } from "@/stores/users-store";
 
 // Post register data to store
 
-const identifiant = defineModel('identifiant', { required: true });
-const password = defineModel('password', { required: true });
+// const identifiant = defineModel('identifiant');
+// const password = defineModel('password');
+const identifiant = ref('');
+const password = ref('');
 
-function postUserData() {
+const userStore = useUserAuth();
+
+const postUserData = () => {
     const registerData = {identifiant: identifiant.value, password: password.value};
-  
-    const userStore = useUserAuth();
-  
-        userStore.register(registerData);
-        
-  
+    userStore.register(registerData);    
 }
 
 </script>
 
 <template>
     <div class="row justify-content-content align-center h-100">
-        <form class="form col-4">
+        <form class="form col-4" @submit.prevent="postUserData()">
             <div class="form-group">
                 <label for="inputRegisterEmail" class="form-label">Identifiant</label>
                 <input v-model="identifiant" type="text" class="form-control" id="inputRegisterEmail" aria-describedby="emailHelp" required>
@@ -40,7 +39,7 @@ function postUserData() {
             </div>
             
             <div class="btn-group justify-content-end">
-                <button type="submit" class="btn btn-primary" @click="postUserData()">S'inscrire</button>
+                <button type="submit" class="btn btn-primary" >S'inscrire</button>
             </div>
         </form>
     </div>

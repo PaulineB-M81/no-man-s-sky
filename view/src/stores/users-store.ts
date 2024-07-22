@@ -8,6 +8,8 @@ export const useUserAuth = defineStore('user', {
 
   state: () => ({
     posts: [],
+    userData: null,
+    error: null
   }),
 
   actions: {
@@ -17,18 +19,25 @@ export const useUserAuth = defineStore('user', {
     // },
 
     async register(registerData: Object) {
-      
+      console.log(registerData)
       try {
         const res = await fetch('http://localhost:5000/api/auth/register', {
           method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify(registerData)
         })
+
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
         
-        return res;
+        this.userData = await res.json();
       }
 
-      catch (e) {
-        return e;
+      catch (error) {
+        console.log(error)
       }
       
     },
