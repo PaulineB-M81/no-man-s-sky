@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useUserAuth } from "@/stores/users-store";
+import { useAlertStore } from "@/stores/alert-store";
 
 // Post register data to store
 
@@ -9,12 +10,34 @@ import { useUserAuth } from "@/stores/users-store";
 const identifiant = ref('');
 const password = ref('');
 
-const userStore = useUserAuth();
 
-const postUserData = () => {
+
+async function postUserData() {
+    const userStore = useUserAuth();
+    const alertStore = useAlertStore();
     const registerData = {identifiant: identifiant.value, password: password.value};
-    userStore.register(registerData);    
+
+    try {
+        const res = await userStore.register(registerData);
+        alertStore.success(res)
+    }
+    catch (error) {
+        alertStore.error(error)
+    }
+
 }
+
+// async function postUserData(values) {
+//     const usersStore = useUsersStore();
+//     const alertStore = useAlertStore();
+//     try {
+//         await usersStore.register(values);
+//         await router.push('/account/login');
+//         alertStore.success('Registration successful');
+//     } catch (error) { 
+//         alertStore.error(error);
+//     }
+// }
 
 </script>
 

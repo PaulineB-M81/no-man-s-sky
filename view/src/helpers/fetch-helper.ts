@@ -11,14 +11,34 @@ function request(method: string) {
         if (body) {
             requestOptions = {
                 method,
+                headers: {
+                    'Content-Type': 'application/json'
+                  },
                 body: JSON.stringify(body)
             }; 
         } else {
             requestOptions = {
                 method,
+                headers: {
+                    'Content-Type': 'application/json'
+                  }
             };
         }
     
-        return fetch(url, requestOptions);
+        return fetch(url, requestOptions).then(handleResponse);
     }
+}
+
+async function handleResponse(response: Response) {
+   
+
+    // check for error response
+    if (!response.ok) {
+       
+        // get error message from body or default to response status
+    
+        return Promise.reject(await response.json());
+    }
+
+    return response;
 }

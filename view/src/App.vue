@@ -2,9 +2,8 @@
 import { RouterLink, RouterView } from 'vue-router'
 import keywords from './keywords.json'
 import HeaderContent from './components/Header.vue';
-// import {useUserManagement} from "./stores/user-profil";
-// const myStore = useUserManagement();
-// console.log(myStore.getBlogPost())
+import {useUserAuth} from "./stores/users-store";
+const myStore = useUserAuth();
 
 </script>
 

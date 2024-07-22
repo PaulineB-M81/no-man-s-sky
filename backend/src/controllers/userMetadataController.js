@@ -4,7 +4,6 @@ const mySqlConnection = require("../db/db.mysql");
 const UserDataProfil = require("../models/UserDataProfil");
 
 exports.createProfil = (req, res) => {
-    console.log(req.body.userId)
      const userProfil = new UserDataProfil({
             userId: req.body.userId,
             pseudo: req.body.userProfil.pseudo,
