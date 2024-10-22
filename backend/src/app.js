@@ -10,6 +10,7 @@ const mySql = require("./db/db.mysql");
 // Importer les routes
 const userRoutes = require("./routes/userRouter");
 const userMetadataRoutes = require("./routes/userMetadataRouter");
+const planetRoutes = require("./routes/planetRouter");
 
 // Création application express
 const app = express();
@@ -25,7 +26,8 @@ app.use(cors());
 
 // Configurer les routes
 app.use("/api/auth", userRoutes);
-app.use("/api/user-metadata", userMetadataRoutes)
+app.use("/api/user-metadata", userMetadataRoutes);
+app.use("/api/planet", planetRoutes);
 
 // Exporter l'application
 module.exports = app;

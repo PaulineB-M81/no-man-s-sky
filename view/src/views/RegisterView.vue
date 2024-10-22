@@ -26,19 +26,6 @@ async function postUserData() {
     }
 
 }
-
-// async function postUserData(values) {
-//     const usersStore = useUsersStore();
-//     const alertStore = useAlertStore();
-//     try {
-//         await usersStore.register(values);
-//         await router.push('/account/login');
-//         alertStore.success('Registration successful');
-//     } catch (error) { 
-//         alertStore.error(error);
-//     }
-// }
-
 </script>
 
 <template>
