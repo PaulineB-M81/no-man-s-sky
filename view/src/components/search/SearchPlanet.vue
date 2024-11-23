@@ -1,4 +1,7 @@
 <template>
+    <div>
+        <button class="btn btn-primary">Rechercher</button>
+    </div>
     <p>Galaxy type + nom</p>
     <p>biome</p>
     <p>ressource</p>
