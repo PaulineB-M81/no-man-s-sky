@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { useAlertStore } from "@/stores/alert-store";
+
+</script>
+
 <template>
     <div>
         <button class="btn btn-primary">Rechercher</button>

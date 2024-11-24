@@ -6,7 +6,7 @@ export const fetchHelper = {
 };
 
 function request(method: string) {
-    return (url: string, body: Object) => {
+    return async (url: string, body: Object) => {
         let requestOptions = {};
         if (body) {
             requestOptions = {
@@ -25,7 +25,8 @@ function request(method: string) {
             };
         }
     
-        return fetch(url, requestOptions).then(handleResponse);
+        const response = await fetch(url, requestOptions);
+        return handleResponse(response);
     }
 }
 

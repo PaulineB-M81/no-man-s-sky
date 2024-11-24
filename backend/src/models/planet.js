@@ -1,28 +1,38 @@
-// Schéma de données utilisateur
+// Schéma de donnéesplanet
 const mySqlConnection = require("../db/db.mysql");
 
 class Planet {
-    //constructor (obj) {
-      //  this.name = obj.name;
-      //  this.biome = obj.biome;
-      //  this.sentinel = obj.sentinel;
-   // }
+    constructor (obj) {
+        this.name = obj.name;
+        this.biome = obj.biome;
+        this.sentinel = obj.sentinel;
+    }
 
-    async getAll() {
-        try {
-            let querySql = `SELECT * FROM planet`;
-            const newPlanet = mySqlConnection.query(
-                querySql, (error, result) => {
-                    error ? error.code : result;
+    static async getAll(callback) {
+        let querySql = `SELECT * FROM planet`;
+        mySqlConnection.query(
+                querySql, (error, results) => {
+                    error ? callback(error, null) : callback(null, results);
                 }
             );
-            return newPlanet;
-        }
+    }
 
-        catch(err) {
-            console.log(err)
-        }
-        
+    async add() {
+        let querySql = `INSERT INTO planet (name, biome, sentinel-level) VALUES(?,?)`;
+        mySqlConnection.query(
+            querySql, [this.name, this.biome, this.sentinel], (error, result) => {
+                error ? error.code : result;
+            }
+        );
+    }
+
+    async remove(planetId) {
+        let querySql = `DELETE FROM planet WHERE id = ${planetId}`;
+        mySqlConnection.query(
+            querySql, (error, results) => {
+                error ? callback(error, null) : callback(null, results);
+            }
+        );
     }
 }
 

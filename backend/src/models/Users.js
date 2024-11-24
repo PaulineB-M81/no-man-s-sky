@@ -9,12 +9,11 @@ class User {
 
     async save() {
         let querySql = `INSERT INTO users (identifiant, password) VALUES(?,?)`;
-        const newUser = mySqlConnection.query(
+        mySqlConnection.query(
             querySql, [this.identifiant, this.password], (error, result) => {
                 error ? error.code : result;
             }
         );
-        return await newUser;
     }
 }
 

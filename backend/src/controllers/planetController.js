@@ -1,43 +1,43 @@
 const Planet = require("../models/planet");
 const mySqlConnection = require("../db/db.mysql");
 
-// Afficher toutes les panets
-exports.getAllPlanetsT = async (req, res) => {
-   try {
-
-     // Save user
-     let planet = new Planet ({
-      
-    });
-
-       const planets = await Planet.getAllPlanets();
-    console.log(planets)
-       // res.status(200).json({planets});
-        
-    }
-
-    catch (error) {
-        res.status(500).json({error: 'bad request: get All planets'});
-    }
-}
-
 exports.getAllPlanets = async (req, res) => {
     try {
-        let querySql = `SELECT * FROM planet`;
-
-        const newPlanet = await mySqlConnection.query(
-           querySql, (error, results) => {
-            if(error) {
-                res.json({error})
-            } else {
+        await Planet.getAll((err, results) => {
+            if (err) { 
+                res.json({err})
+            } else { 
                 res.status(200).json({results})
             }
-           }
-        ) 
+        })
     }
 
     catch (error) {
         res.status(500).json({error: error})
     }
-     
+}
+
+exports.postPlanet = async (req, res) => {
+    try {
+        let planet = new Planet ({
+            identifiant: req.body.identifiant,
+            password: hashPassword
+        });
+        await planet.add();
+        res.status(200).json({message: 'user successfully registered'});
+    }
+
+    catch (error) {
+        res.status(500).json({error: error})
+    }
+}
+
+exports.removePlanet = async (req, res) => {
+    try {
+ 
+    }
+
+    catch (error) {
+        res.status(500).json({error: error})
+    }
 }
